@@ -1,0 +1,360 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Georgia, "Times New Roman", serif;
+    background:
+        radial-gradient(circle at top, #fff8f0, #ead8c5 70%);
+    color: #4a3025;
+    padding: 18px 12px;
+    overflow-x: hidden;
+}
+
+
+/* Floating flowers */
+
+.petals span {
+    position: fixed;
+    top: -40px;
+    font-size: 22px;
+    animation: fall linear infinite;
+    opacity: 0.7;
+    z-index: 0;
+}
+
+.petals span:nth-child(1) {
+    left: 10%;
+    animation-duration: 8s;
+}
+
+.petals span:nth-child(2) {
+    left: 30%;
+    animation-duration: 11s;
+    animation-delay: 2s;
+}
+
+.petals span:nth-child(3) {
+    left: 55%;
+    animation-duration: 9s;
+    animation-delay: 1s;
+}
+
+.petals span:nth-child(4) {
+    left: 75%;
+    animation-duration: 12s;
+    animation-delay: 3s;
+}
+
+.petals span:nth-child(5) {
+    left: 90%;
+    animation-duration: 10s;
+    animation-delay: 4s;
+}
+
+@keyframes fall {
+    from {
+        transform: translateY(-50px) rotate(0deg);
+    }
+
+    to {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}
+
+
+/* Main invitation */
+
+.invitation {
+    position: relative;
+    z-index: 1;
+
+    max-width: 520px;
+    margin: auto;
+
+    background: rgba(255, 250, 244, 0.96);
+
+    border: 1px solid #c9a77d;
+
+    padding: 32px 22px;
+
+    text-align: center;
+
+    border-radius: 4px;
+
+    box-shadow:
+        0 15px 45px rgba(72, 45, 30, 0.18);
+
+    animation: appear 1.2s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Decorative inner border */
+
+.invitation::before {
+    content: "";
+    position: absolute;
+
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+
+    border: 1px solid rgba(177, 132, 85, 0.4);
+
+    pointer-events: none;
+}
+
+
+/* Header */
+
+.small-flower {
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+header h3 {
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    line-height: 1.6;
+}
+
+.department {
+    margin-top: 8px;
+    font-size: 13px;
+    font-style: italic;
+}
+
+.college {
+    margin-top: 5px;
+    font-size: 11px;
+    letter-spacing: 0.3px;
+}
+
+
+/* Hero */
+
+.hero {
+    margin-top: 35px;
+}
+
+.eyebrow {
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.hero h1 {
+    margin-top: 12px;
+
+    font-size: 34px;
+
+    letter-spacing: 4px;
+
+    font-weight: normal;
+}
+
+.year {
+    margin-top: 4px;
+    font-size: 13px;
+    letter-spacing: 5px;
+}
+
+
+/* Divider */
+
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    margin: 20px 30px;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    height: 1px;
+    flex: 1;
+    background: #c9a77d;
+}
+
+.divider span {
+    font-size: 12px;
+}
+
+
+/* Quotes */
+
+.quote {
+    font-size: 14px;
+    font-style: italic;
+    line-height: 1.7;
+
+    max-width: 400px;
+    margin: auto;
+}
+
+
+/* Personalized section */
+
+.personal {
+    margin-top: 32px;
+}
+
+.invited {
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+#teacherName {
+    margin-top: 12px;
+
+    font-size: 31px;
+
+    font-weight: normal;
+
+    letter-spacing: 1px;
+
+    line-height: 1.3;
+
+    animation: nameAppear 1.5s ease;
+}
+
+@keyframes nameAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.ornament {
+    margin-top: 10px;
+    font-size: 25px;
+}
+
+.message {
+    margin: 15px auto 0;
+
+    max-width: 420px;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+
+/* Event details */
+
+.details {
+    margin-top: 30px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 13px;
+}
+
+.detail {
+    padding: 12px;
+
+    border-top: 1px solid rgba(201, 167, 125, 0.5);
+}
+
+.detail:last-child {
+    border-bottom: 1px solid rgba(201, 167, 125, 0.5);
+}
+
+.icon {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.detail p {
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.detail strong {
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: 13px;
+
+    letter-spacing: 1px;
+}
+
+
+/* Closing */
+
+.closing {
+    margin-top: 30px;
+}
+
+.closing-quote {
+    font-size: 13px;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+.with-love {
+    margin-top: 20px;
+
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.closing strong {
+    display: block;
+
+    margin-top: 8px;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* Mobile */
+
+@media (max-width: 380px) {
+
+    .invitation {
+        padding: 27px 17px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+        letter-spacing: 3px;
+    }
+
+    #teacherName {
+        font-size: 26px;
+    }
+
+    header h3 {
+        font-size: 13px;
+    }
+}
